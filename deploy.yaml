@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ant-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ant-app
+  template:
+    metadata:
+      labels:
+        app: ant-app
+    spec:
+      containers:
+      - name: ant-app-container
+        image: ant-international-group-app:1
+        ports:
+        - containerPort: 8000
